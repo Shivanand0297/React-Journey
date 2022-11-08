@@ -1,0 +1,5 @@
+When we breake a site into different component and we are using same variable inside these components, there might be chances that this variable is not getting updated properly inside 
+these components. 
+So to fix this we need a central place where we can place all of our variables and whenever a component need that variable, needs to access that perticular place only to get  the value and in this place there is a proper method to update the variables.
+
+A central place where we put all the variables we need and there is a proper way to update the states 
