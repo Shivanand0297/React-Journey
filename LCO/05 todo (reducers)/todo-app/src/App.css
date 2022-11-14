@@ -17,7 +17,7 @@ h1 {
 }
 form {
   position: fixed;
-  bottom: 500px;
+  bottom: 30%;
   right: 30%;
   left: 30%;
   border-radius: 8px;
