@@ -13,7 +13,7 @@ import { ADD_TODO } from "../context/action.types";
 
 
 const TodoForm = () =>{
-    const [todoString, setTodoString] = useState("")
+    const [todoString, setTodoString] = useState("")    // storing and updating whatever we are typing in the input form
     const { dispatch } = useContext(TodoContext)
 
 

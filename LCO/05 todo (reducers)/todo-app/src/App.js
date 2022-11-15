@@ -8,7 +8,7 @@ import TodoForm from "./Components/TodoForm";
 import Todos from "./Components/Todos";
 
 const App =()=> {
-  const [todos, dispatch] = useReducer(todoReducer, [])
+  const [todos, dispatch] = useReducer(todoReducer, []) // will return 2 things [newstate, dispatchMethod] , dispatchMethod used to specifiy the action
   return(
     <TodoContext.Provider value={{todos, dispatch}}>
       <Container fluid>
