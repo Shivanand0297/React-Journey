@@ -28,7 +28,7 @@ const TodoForm = ({ addTodos }) => {
             value={todoString}
             onChange={(e) => setTodoString(e.target.value)}
           />
-          <Button type="submit" color="warning" />
+          <Button type="submit" color="warning">Add Todo</Button>
         </InputGroup>
       </FormGroup>
     </Form>

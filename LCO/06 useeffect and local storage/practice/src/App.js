@@ -32,9 +32,9 @@ const App = () => {
 
   return (
     <Container fluid>
-        <h1>Container with local memory - practice</h1>
-        <TodoForm addTodos={addTodos}/>
+        <h1>todo with local memory - practice</h1>
         <Todos todos={todos} removeTodos={removeTodos}/>
+        <TodoForm addTodos={addTodos}/>
     </Container>
   )
 }
