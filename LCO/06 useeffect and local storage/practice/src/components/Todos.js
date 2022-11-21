@@ -4,7 +4,7 @@ import {FaCheckDouble} from "react-icons/fa"
 
 const Todos = ({todos, removeTodos}) => {
   return (
-    <ListGroup>
+    <ListGroup className='mt-3 items'>
         {todos.map(todo=>(
             <ListGroupItem key={todo.id}>
                 {todo.todoString}

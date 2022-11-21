@@ -28,7 +28,6 @@ form {
 
 .items {
   position: fixed;
-  top: 50px;
   right: 30%;
   left: 30%;
   border-radius: 8px;
@@ -41,4 +40,8 @@ form {
 .completedTodo {
   background-color: darkgray;
   text-decoration: line-through;
+}
+
+.float-right{
+  float: right;
 }
