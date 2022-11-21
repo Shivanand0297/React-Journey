@@ -15,7 +15,7 @@ const App = () => {
     const localTodos = localStorage.getItem("todos")
     console.log({localStorage});
     if(localTodos){
-      setTodos(JSON.parse(localTodos))
+      setTodos(JSON.parse(localTodos))  //JSON.parse() consvert the JSON string into object
     }
   }, [])
 
@@ -26,7 +26,7 @@ const App = () => {
 
   // adding into local storage
   useEffect(()=>{
-    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("todos", JSON.stringify(todos)); //converts the JSON object into string
   },[todos]);  // whenever there is change in the todos, run this method and add that into local storage
 
   const removeTodo = (id) =>{
