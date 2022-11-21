@@ -6,7 +6,7 @@ import React from 'react'
 const Todoform = ({addTodos}) => {  // method as a prop
     const [todoString, setTodoString] = useState("")
 
-    const handleSubmit = () =>{
+    const handleSubmit = (e) =>{
         e.preventDefault()
         if(todoString === ""){
             return alert("Enter a valid todo")
