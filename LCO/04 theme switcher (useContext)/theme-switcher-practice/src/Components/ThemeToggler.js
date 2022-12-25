@@ -15,3 +15,21 @@ const ThemeToggler = () =>{
 }
 
 export default ThemeToggler
+
+
+
+/* import React from 'react'
+import { useContext } from 'react'
+import ThemeContext from "../Context/ThemeContext"
+const ThemeToggler = () => {
+
+    const [theme, setTheme] = useContext(ThemeContext)
+
+  return (
+    <div onClick={()=>{setTheme(theme === "light" ? "dark" : "light")}}>
+        <span>{theme === "light" ? "turn off" : "turn on"}</span>
+    </div>
+  )
+}
+
+export default ThemeToggler */

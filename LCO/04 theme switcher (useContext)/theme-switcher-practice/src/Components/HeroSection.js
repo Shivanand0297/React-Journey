@@ -1,4 +1,4 @@
-import ThemeContext from "../Context/ThemeContext";
+/* import ThemeContext from "../Context/ThemeContext";
 import { useContext } from "react";
 import Apptheme from "../Colors";
 
@@ -13,7 +13,35 @@ const HeroSection = () => {
         height: "90vh",
 
     }}>
-        <h1>this is a test for Theme Toggler</h1>
+        <h1>this is HeroSection</h1>
+    </div>
+  )
+}
+
+export default HeroSection */
+
+
+import React, { useContext } from 'react'
+import ThemeContext from '../Context/ThemeContext'
+import Apptheme from "../Colors"
+
+const HeroSection = () => {
+
+  const [defaultTheme, setDefaultTheme] = useContext(ThemeContext)
+     const currentTheme = Apptheme[defaultTheme]
+
+  return (
+    <div style={{
+      color: `${currentTheme.color}`,
+      backgroundColor: `${currentTheme.backgroundColor}`,
+      height: "90vh"
+    }}>
+      <h1>this is hero section</h1>
+      <button
+      onClick={()=>{
+        setDefaultTheme(defaultTheme === "light" ? "dark" : "light")
+      }}
+      >click me</button>
     </div>
   )
 }

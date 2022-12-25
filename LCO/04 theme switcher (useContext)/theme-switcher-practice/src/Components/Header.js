@@ -3,7 +3,10 @@ import ThemeToggler from './ThemeToggler'
 
 const Header = () => {
   return (
-    <div>
+    <div style={{
+      display: "flex",
+      justifyContent: "space-between"
+    }}>
         this is Header
         <ThemeToggler/>
     </div>
