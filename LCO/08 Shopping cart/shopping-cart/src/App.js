@@ -8,7 +8,7 @@ import Cart from "./Components/Cart";
 import "./App.css";
 
 const App = () => {
-  const [cartItem, setCartItem] = useState([]);
+  const [cartItem, setCartItem] = useState([]); // state to store cart items and change it
 
   const addInCart = (item) => {
     const isAlreadyPresent = cartItem.findIndex(
@@ -16,7 +16,10 @@ const App = () => {
     );
 
     if (isAlreadyPresent !== -1) {
-     return toast("Item already added", { type: "error", position: "bottom-right" });
+     return toast("Item already added", { 
+      type: "error", 
+      position: "bottom-right" 
+    });
     }
 
     // if item is not present in the cart then add it

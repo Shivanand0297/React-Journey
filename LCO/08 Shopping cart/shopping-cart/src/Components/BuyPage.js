@@ -12,7 +12,7 @@ console.log(page);
 let url = `https://api.pexels.com/v1/search?query=${query}&per_page=6&page=${page}`;
 
 const BuyPage = ({ addInCart }) => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState([]); //to store the api data
 
   const fetchPhotos = async () => {
     console.log(url);
