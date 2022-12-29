@@ -20,6 +20,8 @@ import PageNotFound from "./pages/PageNotFound";
 
 // context
 import UserContext from "./context/UserContext";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -28,12 +30,14 @@ const App = () => {
     <BrowserRouter>
       <ToastContainer />
       <UserContext.Provider value={{ user, setUser }}>
+        <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+        <Footer/>
       </UserContext.Provider>
     </BrowserRouter>
   );
