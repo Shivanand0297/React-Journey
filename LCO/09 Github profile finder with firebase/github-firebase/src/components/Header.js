@@ -35,7 +35,7 @@ const Header = () => {
         <Nav className="ml-auto" navbar>
           {context.user ? (
             <NavItem>
-              <NavLink tag={Link} to="/">
+              <NavLink onClick={()=>{context.setUser(null)}} >
                 Logout
               </NavLink>
             </NavItem>
@@ -47,7 +47,7 @@ const Header = () => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/">
+                <NavLink tag={Link} to="/signin">
                   Signin
                 </NavLink>
               </NavItem>
