@@ -42,13 +42,13 @@ const Header = () => {
           ) : (
             <>
               <NavItem>
-                <NavLink tag={Link} to="/">
+                <NavLink tag={Link} to="/signup">
                   Signup
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} to="/">
-                  Singin
+                  Signin
                 </NavLink>
               </NavItem>
             </>

@@ -9,7 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
 // firebase
-import firebase from "firebase/app";
+import { initializeApp } from 'firebase/app'
 import "firebase/auth";
 
 // components
@@ -27,7 +27,7 @@ import Header from "./components/Header";
 import firebaseConfig from "./config/FirebaseConfig"
 
 // firebase initialization as soon as the app loads
-firebase.initializeApp(firebaseConfig)
+initializeApp(firebaseConfig)
 
 const App = () => {
   const [user, setUser] = useState(null);
