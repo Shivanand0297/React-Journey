@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Collapse,
@@ -13,25 +13,46 @@ import {
 import UserContext from "../context/UserContext";
 
 const Header = () => {
+  const context = useContext(UserContext);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggler = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Navbar color="info" light expand="md">
       <NavbarBrand>
-        <Link to={"/"}>
-          Git Fire App
-        </Link>
+        <Link to={"/"}>Git Fire App</Link>
       </NavbarBrand>
-      <NavbarToggler />
-      <Collapse navbar  >
+      <NavbarText>
+        {context.user?.email ? context.user.email : ""}{" "}
+        {/* If logged in, display email id */}
+      </NavbarText>
+      <NavbarToggler onClick={toggler} />
+      <Collapse navbar isOpen={isOpen}>
         <Nav className="ml-auto" navbar>
-          <NavItem>
-            <NavLink>Signup</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink>Singin</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink>Logout</NavLink>
-          </NavItem>
+          {context.user ? (
+            <NavItem>
+              <NavLink tag={Link} to="/">
+                Logout
+              </NavLink>
+            </NavItem>
+          ) : (
+            <>
+              <NavItem>
+                <NavLink tag={Link} to="/">
+                  Signup
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/">
+                  Singin
+                </NavLink>
+              </NavItem>
+            </>
+          )}
         </Nav>
       </Collapse>
     </Navbar>
