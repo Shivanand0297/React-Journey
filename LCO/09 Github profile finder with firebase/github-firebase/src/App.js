@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 // toastify
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
 // firebase

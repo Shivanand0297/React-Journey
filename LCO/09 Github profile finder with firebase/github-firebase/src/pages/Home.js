@@ -34,7 +34,7 @@ import axios from "axios";
     const fetchDetails = async() =>{
       try {
         const {data} = await axios.get(`https://api.github.com/users/${search}`)
-        console.log({data});
+        console.log(data);
         setUser(data)
 
       } catch (error) {
