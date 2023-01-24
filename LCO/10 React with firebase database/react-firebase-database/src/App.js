@@ -21,10 +21,10 @@ import "firebase/database"
 import "firebase/storage"
 
 // components
-import AddContact from "./pages/AddContact";
-import Contacts from "./components/Contact";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
+import AddContact from "./pages/AddContact";
+import Contacts from "./pages/Contacts";
 import ViewContact from "./pages/ViewContact";
 import PageNotFound from "./pages/PageNotFound";
 
@@ -70,10 +70,7 @@ const App = () => {
         payload: false
       })
 
-
     }) 
-
-
 
   };
   
@@ -90,10 +87,10 @@ const App = () => {
         <Header />
         <Container>
           <Routes>
-            <Route path="/contact/add" element={AddContact} />
-            <Route path="/contact/view" element={ViewContact} />
-            <Route path="/" element={Contacts} />
-            <Route path="*" element={PageNotFound} />
+            <Route path="/contact/add" element={<AddContact/>} />
+            <Route path="/contact/view" element={<ViewContact/>} />
+            <Route path="/" element={<Contacts/>} />
+            <Route path="*" element={<PageNotFound/>} />
           </Routes>
         </Container>
 
