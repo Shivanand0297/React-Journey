@@ -1,9 +1,9 @@
 // combining all the reducers
 import { combineReducers } from "redux";
-import reducer from "./reducer";
+import moneyReducer from "./moneyReducer";
 
 const reducers = combineReducers({
-    reducer: reducer
+    reducer: moneyReducer
 })
 
 export default reducers
