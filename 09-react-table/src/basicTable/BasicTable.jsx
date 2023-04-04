@@ -19,6 +19,7 @@ const BasicTable = () => {
     getTableProps, //needed by the table tag
     getTableBodyProps, //needed by the body tag
     headerGroups, //we can group column headers into one header
+    footerGroups,
     rows, 
     prepareRow 
   } = useTable({
@@ -30,7 +31,6 @@ const BasicTable = () => {
     
     <table {...getTableProps()}>
       <thead>
-        {console.log(headerGroups)}
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
@@ -51,6 +51,18 @@ const BasicTable = () => {
           );
         })}
       </tbody>
+      {/* table footer */}
+      <tfoot>
+        {footerGroups.map((footerGroup)=>(
+          <tr {...footerGroup.getFooterGroupProps()} >
+            {footerGroup.headers.map((column)=>(
+              <td {...column.getFooterProps()} >
+                {column.render("Footer")}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tfoot>
     </table>
   );
 };
