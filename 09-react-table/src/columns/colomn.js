@@ -2,34 +2,79 @@ export const COLUMNS = [
   {
     Header: "Id",
     Footer: "Id",
-    accessor: "id"
+    accessor: "id",
   },
   {
     Header: "First Name",
     Footer: "First Name",
-    accessor: "first_name"
+    accessor: "first_name",
   },
   {
     Header: "Last Name",
     Footer: "Last Name",
-    accessor: "last_name"
+    accessor: "last_name",
   },
   {
     Header: "Date of Birth",
     Footer: "Date of Birth",
-    accessor: "date_of_birth"
+    accessor: "date_of_birth",
   },
   {
     Header: "Country",
     Footer: "Country",
-    accessor: "country"
+    accessor: "country",
   },
   {
     Header: "Phone",
     Footer: "Phone",
-    accessor: "phone"
+    accessor: "phone",
   },
-]
+];
 
 // Header -> Labels for each of the columns, only the fields specified in the column will get rendered in the ui
 // accessor -> Identifies which data goes under which column in each row
+
+export const GROUPED_COLUMN = [
+  {
+    Header: "Id",
+    Footer: "Id",
+    accessor: "id",
+  },
+  {
+    Header: "Name",
+    Footer: "Name",
+    columns: [
+      {
+        Header: "First Name",
+        Footer: "First Name",
+        accessor: "first_name",
+      },
+      {
+        Header: "Last Name",
+        Footer: "Last Name",
+        accessor: "last_name",
+      },
+    ],
+  },
+  {
+    Header: "Info",
+    Footer: "Info",
+    columns: [
+      {
+        Header: "Date of Birth",
+        Footer: "Date of Birth",
+        accessor: "date_of_birth",
+      },
+      {
+        Header: "Country",
+        Footer: "Country",
+        accessor: "country",
+      },
+      {
+        Header: "Phone",
+        Footer: "Phone",
+        accessor: "phone",
+      },
+    ],
+  },
+];

@@ -2,7 +2,7 @@ import React from "react";
 
 import { useTable } from "react-table";
 import MOCK_DATA from "../table_data/MOCK_DATA.json";
-import { COLUMNS } from "../columns/colomn";
+import { COLUMNS, GROUPED_COLUMN } from "../columns/colomn";
 import { useMemo } from "react";
 
 // table css
@@ -12,7 +12,7 @@ const BasicTable = () => {
   // Note: memoize the data so that the data is not created on each render.
   // if not done react table will think that new data is coming every single time
   // and attempts to perform complex logics every single time.
-  const columns = useMemo(() => COLUMNS, []);
+  const columns = useMemo(() => GROUPED_COLUMN, []);
   const data = useMemo(() => MOCK_DATA, []);
 
   const { 
