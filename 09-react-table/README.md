@@ -63,3 +63,14 @@ const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
   ))}
 </tfoot>
 ```
+
+### Sorting column
+
+- Import `useSortBy` from react-table.
+- Add in the second param in `useTable()` hook.
+```jsx
+<th {...column.getHeaderProps(column.getSortByToggleProps())}>
+  {column.render("Header")}
+  <span>{column.isSorted ? (column.isSortedDesc ? "⬇️" : "⬆️") : null}</span>
+</th>
+```
