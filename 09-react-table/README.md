@@ -68,9 +68,20 @@ const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
 
 - Import `useSortBy` from react-table.
 - Add in the second param in `useTable()` hook.
+
 ```jsx
 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
   {column.render("Header")}
   <span>{column.isSorted ? (column.isSortedDesc ? "⬇️" : "⬆️") : null}</span>
 </th>
+```
+
+### Formating Data
+
+- Add this in column.js file, Cell will control what will be rendered in the UI.
+
+```js
+Cell: ({ value }) => {
+  return format(new Date(value), "dd/MM/yyyy");
+};
 ```
