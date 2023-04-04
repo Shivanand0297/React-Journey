@@ -1,8 +1,11 @@
 import React from 'react'
+import BasicTable from './basicTable/BasicTable'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <BasicTable/>
+    </div>
   )
 }
 
