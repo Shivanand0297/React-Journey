@@ -85,3 +85,24 @@ Cell: ({ value }) => {
   return format(new Date(value), "dd/MM/yyyy");
 };
 ```
+
+### Filtering Data (Global filter)
+
+- Make a global filter component as below.
+
+```js
+const GlobalFilter = ({ filter, setFilter }) => {
+  return (
+    <span>
+      Search:
+      <input value={filter || ""} onChange={(e) => setFilter(e.target.value)} />
+    </span>
+  );
+};
+
+export default GlobalFilter;
+```
+
+- Import useGlobalFilter hook from react-table.
+- Extract `state: { globalFilter }` and `setGlobalFIlter` function from `useTable()` hook.
+- Pass above 2 as a props in `<GlobalFilter/>` component.
