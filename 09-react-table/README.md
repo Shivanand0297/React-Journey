@@ -1,4 +1,5 @@
 ## React-Table v7
+<hr>
 
 ### Steps
 
@@ -47,6 +48,8 @@ const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
 
 - Apply the css styles to table.
 
+<hr>
+
 ### Adding table footer.
 
 - Specify the Footer property in `column.js` file.
@@ -64,6 +67,8 @@ const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
 </tfoot>
 ```
 
+<hr>
+
 ### Sorting column
 
 - Import `useSortBy` from react-table.
@@ -75,6 +80,7 @@ const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
   <span>{column.isSorted ? (column.isSortedDesc ? "⬇️" : "⬆️") : null}</span>
 </th>
 ```
+<hr>
 
 ### Formating Data
 
@@ -85,6 +91,7 @@ Cell: ({ value }) => {
   return format(new Date(value), "dd/MM/yyyy");
 };
 ```
+<hr>
 
 ### Filtering Data (Global filter)
 
@@ -106,3 +113,29 @@ export default GlobalFilter;
 - Import useGlobalFilter hook from react-table.
 - Extract `state: { globalFilter }` and `setGlobalFIlter` function from `useTable()` hook.
 - Pass above 2 as a props in `<GlobalFilter/>` component.
+
+<hr>
+
+### Column Filter
+
+```js
+const ColumnFilter = ({ column }) => {
+  const { filterValue, setFilter } = column;
+  return (
+    <span>
+      Search:
+      <input
+        value={filterValue || ""}
+        onChange={(e) => setFilter(e.target.value)}
+      />
+    </span>
+  );
+};
+export default ColumnFilter;
+```
+
+- Import `useFilters` hook from react-table
+- Place in the second parameter of useTable().
+- Add ```<div>{column.canFilter ? column.render("Filter") : null}</div>``` between `<th>` tag.
+- Add `Filter: ColumnFilter` in `column.js` file
+

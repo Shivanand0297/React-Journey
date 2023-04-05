@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useGlobalFilter, useSortBy, useTable } from "react-table";
+import { useFilters, useGlobalFilter, useSortBy, useTable } from "react-table";
 import MOCK_DATA from "../table_data/MOCK_DATA.json";
 import { COLUMNS } from "../columns/colomn";
 import { useMemo } from "react";
@@ -27,8 +27,9 @@ const FilteringTable = () => {
       columns,
       data,
     },
+    useFilters,
     useGlobalFilter,
-    useSortBy,
+    useSortBy
   );
 
   return (
@@ -42,12 +43,9 @@ const FilteringTable = () => {
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
                   <span>
-                    {column.isSorted
-                      ? column.isSortedDesc
-                        ? "⬇️"
-                        : "⬆️"
-                      : null}
+                    {column.isSorted ? column.isSortedDesc ? "⬇️" : "⬆️" : null}
                   </span>
+                  <div>{column.canFilter ? column.render("Filter") : null}</div>
                 </th>
               ))}
             </tr>
