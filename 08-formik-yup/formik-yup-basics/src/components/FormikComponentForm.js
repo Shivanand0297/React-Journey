@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 
 // validation schema
 import { basicSchema } from "../schema/basicSchema";
@@ -39,7 +39,8 @@ const FormikComponentForm = () => {
       facebook: "",
       twitter: ""
     },
-    phoneNumber: []
+    phoneNumber: [],
+    hobbies: [""]
   };
 
   const handleSubmit = (values, actions) => {
@@ -186,6 +187,33 @@ const FormikComponentForm = () => {
             placeholder="secondary Phone no." 
             type="text"
           />
+        </div>
+
+        <div>
+          <label htmlFor="hobbies" >hobbies</label>
+          <FieldArray 
+            id="hobbies" 
+            name="hobbies"
+            placeholder="hobbies." 
+            type="text"
+          >
+            {(fieldArrayProps)=>{
+
+                const {push, remove, form:{ values: {hobbies}}} = fieldArrayProps;
+                console.log(hobbies)
+                return(
+                  <div>
+                    {hobbies.map((hobbie, i)=>(
+                      <div key={i} >
+                        <Field name={`hobbies[${i}]`} />
+                        {(i>0) && <button onClick={()=> remove(i)} >-</button>}
+                        <button onClick={()=> push("")} >+</button>
+                      </div>
+                    ))}
+                  </div>
+                )
+              }}
+          </FieldArray>
         </div>
 
         <button type="submit">Submit</button>
