@@ -35,6 +35,10 @@ const FormikComponentForm = () => {
     confirmPassword: "",
     address: "",
     comment: "",
+    socials: {
+      facebook: "",
+      twitter: ""
+    }
   };
 
   const handleSubmit = (values, actions) => {
@@ -131,7 +135,6 @@ const FormikComponentForm = () => {
           <label htmlFor="comment"> comment</label>
           <Field name="comment">
             {(props) => {
-              console.log(props);
               const { field, meta, form } = props;
               return (
                 <div>
@@ -141,6 +144,26 @@ const FormikComponentForm = () => {
               );
             }}
           </Field>
+        </div>
+
+        <div>
+          <label htmlFor="facebook" >facebook</label>
+          <Field 
+            id="facebook" 
+            name="socials.facebook"  //Note: we have to specify nested property in this manner
+            placeholder="facebook" 
+            type="text"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="twitter" >twitter</label>
+          <Field 
+            id="twitter" 
+            name="socials.twitter"  //Note: we have to specify nested property in this manner
+            placeholder="twitter" 
+            type="text"
+          />
         </div>
 
         <button type="submit">Submit</button>
