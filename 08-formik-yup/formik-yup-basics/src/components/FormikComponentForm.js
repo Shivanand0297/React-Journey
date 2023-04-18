@@ -38,11 +38,12 @@ const FormikComponentForm = () => {
     socials: {
       facebook: "",
       twitter: ""
-    }
+    },
+    phoneNumber: []
   };
 
   const handleSubmit = (values, actions) => {
-    actions.resetForm(); // to clear the form values
+    // actions.resetForm(); // to clear the form values
     console.log("submitted");
     console.log(values);
   };
@@ -162,6 +163,27 @@ const FormikComponentForm = () => {
             id="twitter" 
             name="socials.twitter"  //Note: we have to specify nested property in this manner
             placeholder="twitter" 
+            type="text"
+          />
+        </div>
+
+        {/* phoneNumber */}
+        <div>
+          <label htmlFor="phoneNumber" >Primary Phone no.</label>
+          <Field 
+            id="primary-phoneNumber" 
+            name="phoneNumber[0]"
+            placeholder="Primary Phone no." 
+            type="text"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="phoneNumber" >secondary Phone no.</label>
+          <Field 
+            id="secondary-phoneNumber" 
+            name="phoneNumber[1]"
+            placeholder="secondary Phone no." 
             type="text"
           />
         </div>
