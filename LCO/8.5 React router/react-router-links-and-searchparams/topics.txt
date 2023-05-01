@@ -1,0 +1,3 @@
+- useSearchParams()
+- uselocation()
+- using link to set query paramater (<Link to="?type=jedi">Jedi</Link>)

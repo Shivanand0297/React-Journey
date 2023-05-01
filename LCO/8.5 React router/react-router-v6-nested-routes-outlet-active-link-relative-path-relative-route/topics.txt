@@ -4,5 +4,4 @@
 - relative-path (<Link>)
 - relative-route
 - useOutletContext()
-- useSearchParams()
-- using link to set query paramater (<Link to="?type=jedi">Jedi</Link>)
+
