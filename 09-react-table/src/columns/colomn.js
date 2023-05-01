@@ -31,7 +31,8 @@ export const COLUMNS = [
     Header: "Country",
     Footer: "Country",
     accessor: "country",
-    Filter: ColumnFilter
+    Filter: ColumnFilter,
+    Cell: (value)=>{ console.log(value) }  //Cell will control what will be rendered in the ui
   },
   {
     Header: "Phone",
