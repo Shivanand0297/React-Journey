@@ -1,0 +1,8 @@
+- react-router-v6
+- nested-routes-outlet
+- active-link 
+- relative-path (<Link>)
+- relative-route
+- useOutletContext()
+- useSearchParams()
+- using link to set query paramater (<Link to="?type=jedi">Jedi</Link>)
