@@ -34,6 +34,17 @@ const loadOptions = (searchValue, callback) => {
   }, 2000 )
 }
 
+const customTheme = (theme) => {
+  return {
+    ...theme,
+    colors: {
+      ...theme.colors,
+      primary25: "#313131",
+      primary: "red"
+    }
+  }
+}
+
 const App = () => {
   return (
     <div style={{ width: 300 }}>
@@ -52,9 +63,10 @@ const App = () => {
         onChange={(values) => customChangeHandler(values)}
         placeholder="Please select department"
         isMulti
-        // isSearchable
+        isSearchable
         noOptionsMessage={()=>"No more department to show"}
-        styles={selectStyles}
+        // styles={selectStyles}
+        theme={customTheme}
         defaultOptions  //to load all the data at once
       />
     </div>

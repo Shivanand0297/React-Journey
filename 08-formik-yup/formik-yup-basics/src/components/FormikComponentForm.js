@@ -137,7 +137,7 @@ const FormikComponentForm = () => {
           <label htmlFor="comment"> comment</label>
           <Field name="comment">
             {(props) => {
-              const { field, meta, form } = props;
+              const { field, meta } = props;
               return (
                 <div>
                   <input type="text" id="comment" {...field} />
@@ -205,7 +205,9 @@ const FormikComponentForm = () => {
                   <div>
                     {hobbies.map((hobbie, i)=>(
                       <div key={i} >
-                        <Field name={`hobbies[${i}]`} />
+                        <Field 
+                          name={`hobbies[${i}]`} 
+                        />
                         {(i>0) && <button onClick={()=> remove(i)} >-</button>}
                         <button onClick={()=> push("")} >+</button>
                       </div>
