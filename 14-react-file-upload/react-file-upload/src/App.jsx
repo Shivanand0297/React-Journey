@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 
 const App = () => {
-  const [file, setFile] = useState(null);
+  const [files, setfiles] = useState(null);
   const [msg, setMsg] = useState("");
   const [progress, setProgress] = useState({
     started: false,
@@ -10,18 +10,24 @@ const App = () => {
   });
 
   const handleUpload = async () => {
-    // checking if file is present or not
-    if (!file) {
-      setMsg("No file selected");
+    // checking if files is present or not
+    if (!files) {
+      setMsg("No files selected");
       return;
     }
-    // if file is selected then continue
+    // if files is selected then continue
 
     const fd = new FormData();
-    fd.append("file", file);
+    
+    for (let i = 0; i < files.length; i++) {
+      fd.append(`file${i}`, files[i])      
+    }
+
+    // fd.append("files", files);
+    
     // Note: form data obj (fd) is important here
     // 1. it will set the post request headers automatically.
-    // 2. it also supports multiple files.
+    // 2. it also supports multiple filess.
     // 3. it send the data in the same formate as of html form element.
 
     try {
@@ -50,9 +56,15 @@ const App = () => {
 
   return (
     <>
-      <h1>Uploading files in react</h1>
+      <h1>Uploading filess in react</h1>
       <div>
-        <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+        {/* <input type="files" onChange={(e) => setfiles(e.target.files[0])} /> */}
+        <input 
+          type="file" 
+          multiple
+          onChange={(e) => setfiles(e.target.files)} 
+          // onChange={(e) => setfiles(e.target.files[0])} 
+        />
       </div>
       <button onClick={handleUpload}>Upload</button>
       {progress.started && <progress max="100" value={progress.progressCount}></progress>}
