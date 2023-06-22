@@ -13,6 +13,8 @@ const Button = () => {
     });
   });
 
+  // useQuery("key1", "key2", userid) // will work same as useEffect dependencies -> will make network call when userid changes
+
   console.log(query);
   return <button>iam a button {query.data}</button>;
 };
