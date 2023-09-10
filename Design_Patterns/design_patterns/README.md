@@ -7,3 +7,6 @@ A Proxy object help to create a middleware which helps in interacting with the v
 
 ### Factory
 Using a single function to create multiple objects of same schemas to avoid any typos and to be future proff
+
+### Observer
+Observer design pattern is used when you have one thing for example a `counter` in a store, and you want if this `counter` changes other pieces of code who have subscribed to this store should get the updated counter state value.
