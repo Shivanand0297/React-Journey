@@ -3,6 +3,9 @@ import { Link, useLoaderData, defer, Await } from "react-router-dom"
 import { getHostVans } from "../../api"
 import { requireAuth } from "../../utils"
 
+import Skeleton from '@mui/material/Skeleton';
+
+
 export async function loader({ request }) {
     await requireAuth(request)
     return defer({ vans: getHostVans() })
@@ -40,7 +43,13 @@ export default function HostVans() {
     return (
         <section>
             <h1 className="host-vans-title">Your listed vans</h1>
-            <React.Suspense fallback={<h2>Loading vans...</h2>}>
+            <React.Suspense fallback={
+                <div style={{padding: "0px 26px", display: "flex", flexDirection: "column", gap: "15px"}}>
+                    <Skeleton variant="rectangular" width="100%" height="107px" animation="wave" sx={{bgcolor: "#ccc5bd"}} />
+                    <Skeleton variant="rectangular" width="100%" height="107px" animation="wave" sx={{bgcolor: "#ccc5bd"}} />
+                    <Skeleton variant="rectangular" width="100%" height="107px" animation="wave" sx={{bgcolor: "#ccc5bd"}} />
+                </div>
+            }>
                 <Await resolve={dataPromise.vans}>
                     {renderVanElements}
                 </Await>

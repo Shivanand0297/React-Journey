@@ -4,6 +4,9 @@ import { getHostVans } from "../../api"
 import { requireAuth } from "../../utils"
 import { BsStarFill } from "react-icons/bs"
 
+import Skeleton from '@mui/material/Skeleton';
+
+
 export async function loader({ request }) {
     await requireAuth(request)
     return defer({ vans: getHostVans() })
@@ -54,7 +57,7 @@ export default function Dashboard() {
                     <h2>Your listed vans</h2>
                     <Link to="vans">View all</Link>
                 </div>
-                <React.Suspense fallback={<h3>Loading...</h3>}>
+                <React.Suspense fallback={<Skeleton variant="rectangular" width="100%" height="60" />}>
                     <Await resolve={loaderData.vans}>{renderVanElements}</Await>
                 </React.Suspense>
             </section>
