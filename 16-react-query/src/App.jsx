@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import DependentQuery from "./DependentQuery";
+import Posts from "./Post";
+import { Route, Routes } from "react-router-dom";
+import PostDetail from "./PostDetail";
 
 const Button = () => {
   const query = useQuery("query-key", () => { 
@@ -25,10 +28,13 @@ const App = () => {
 
   return (
     <>
-      App
-      { toggleButton && <Button />}
-      <button onClick={() => setToggleButton(!toggleButton)}>Toggle button</button>
-      <DependentQuery/>
+      {/* { toggleButton && <Button />}
+      <button onClick={() => setToggleButton(!toggleButton)}>Toggle button</button> */}
+      {/* <DependentQuery/> */}
+      <Routes>
+        <Route path="/posts" element={<Posts/>}/>
+        <Route path="/posts/:id" element={<PostDetail/>}/>
+      </Routes>
     </>
   );
 };

@@ -27,7 +27,7 @@ const DependentQuery = () => {
   return (
     <>
       <div>DependentQuery</div>
-      <button onClick={()=> setValue(v => !v)}>click me</button>
+      <button onClick={()=> setValue(v => !v)}>enabled: {`${value}`}</button>
     </>
   )
 }
