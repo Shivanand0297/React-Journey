@@ -4,6 +4,7 @@ import DependentQuery from "./DependentQuery";
 import Posts from "./Post";
 import { Route, Routes } from "react-router-dom";
 import PostDetail from "./PostDetail";
+import CreatePost from "./CreatePost";
 
 const Button = () => {
   const query = useQuery("query-key", () => { 
@@ -34,6 +35,7 @@ const App = () => {
       <Routes>
         <Route path="/posts" element={<Posts/>}/>
         <Route path="/posts/:id" element={<PostDetail/>}/>
+        <Route path="/createPost" element={<CreatePost/>}/>
       </Routes>
     </>
   );
